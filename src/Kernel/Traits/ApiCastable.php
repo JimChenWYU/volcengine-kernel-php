@@ -17,16 +17,16 @@ trait ApiCastable
         $collection = $this->getCollectable($collection);
         return new BaseResponse(
             new ResponseMetadata(
-                $collection->get('ResponseMetadata.RequestId'),
-                $collection->get('ResponseMetadata.Action'),
-                $collection->get('ResponseMetadata.Version'),
-                $collection->get('ResponseMetadata.Service'),
-                $collection->get('ResponseMetadata.Region'),
+                $collection->get('ResponseMetadata.RequestId', ''),
+                $collection->get('ResponseMetadata.Action', ''),
+                $collection->get('ResponseMetadata.Version', ''),
+                $collection->get('ResponseMetadata.Service', ''),
+                $collection->get('ResponseMetadata.Region', ''),
                 $collection->has('ResponseMetadata.Error') ?
                 new ErrorInfo(
-                    $collection->get('ResponseMetadata.Error.CodeN'),
-                    $collection->get('ResponseMetadata.Error.Code'),
-                    $collection->get('ResponseMetadata.Error.Message')
+                    $collection->get('ResponseMetadata.Error.CodeN', 0),
+                    $collection->get('ResponseMetadata.Error.Code', ''),
+                    $collection->get('ResponseMetadata.Error.Message', '')
                 ) : null
             ),
             $collection->get('Result')
