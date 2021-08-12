@@ -2,6 +2,7 @@
 
 /tests export-ignore
 /.github export-ignore
+.editorconfig export-ignore
 .gitattributes export-ignore
 .gitignore export-ignore
 .scrutinizer.yml export-ignore
@@ -10,3 +11,4 @@ phpunit.php export-ignore
 phpunit.xml.dist export-ignore
 phpunit.xml export-ignore
 .php_cs export-ignore
+.php-cs-fixer.php export-ignore
