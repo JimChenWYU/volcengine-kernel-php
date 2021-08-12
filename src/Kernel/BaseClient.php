@@ -133,9 +133,9 @@ class BaseClient
         ) {
             // Limit the number of retries to 2
             if ($retries < $this->app['config']->get(
-                    'http.max_retries',
-                    1
-                ) && $response && $body = $response->getBody()) {
+                'http.max_retries',
+                1
+            ) && $response && $body = $response->getBody()) {
                 // Retry on server errors
                 $response = json_decode((string)$body, true);
                 if (isset($response['ResponseMetadata']['Error'])) {
